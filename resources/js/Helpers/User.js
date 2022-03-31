@@ -37,6 +37,6 @@ class User {
         }
         return false
     }
-    
+
 }
 export default User = new User();

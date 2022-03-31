@@ -14,7 +14,7 @@ class Token {
     }
 
     decode(payload){
-        return JSON.parse(atop(payload))
+        return JSON.parse(atob(payload))
     }
 
 }
