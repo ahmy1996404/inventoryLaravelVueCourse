@@ -16,7 +16,7 @@ class User {
         if (storeToken) {
             return Token.isValid(storeToken) ? true : false;
         }
-        false;
+        return false;
     }
 
     loggedIn() {
