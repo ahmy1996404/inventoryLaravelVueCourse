@@ -22,7 +22,7 @@ window.User = User
 
 
 // import notification class
-import Notifcation from "./Helpers/Notifcation";
+import Notifcation from "./Helpers/Notification";
 window.Notifcation = Notifcation;
 
 // import sweet alert
