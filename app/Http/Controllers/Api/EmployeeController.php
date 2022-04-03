@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class EmpoyeeController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class EmpoyeeController extends Controller
      */
     public function index()
     {
-        //
+        $employee = Employee::all();
+        return response()->json($employee);
     }
 
 
@@ -41,7 +43,7 @@ class EmpoyeeController extends Controller
         //
     }
 
-   
+
     /**
      * Update the specified resource in storage.
      *
