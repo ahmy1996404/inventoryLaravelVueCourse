@@ -5797,6 +5797,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (!User.loggedIn()) {
@@ -5809,15 +5810,20 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         email: null,
-        password: null,
+        phone: null,
         name: null,
+        sallary: null,
+        address: null,
+        photo: null,
+        nid: null,
+        joining_date: null,
         password_confirmation: null
       },
       errors: {}
     };
   },
   methods: {
-    register: function register() {
+    employeeInsert: function employeeInsert() {
       var _this = this;
 
       axios.post("api/auth/signup", this.form).then(function (res) {
@@ -36648,10 +36654,11 @@ var render = function () {
                   _c(
                     "form",
                     {
+                      attrs: { enctype: "multipart/form-data" },
                       on: {
                         submit: function ($event) {
                           $event.preventDefault()
-                          return _vm.register.apply(null, arguments)
+                          return _vm.employeeInsert.apply(null, arguments)
                         },
                       },
                     },
@@ -36936,7 +36943,33 @@ var render = function () {
                         ]),
                       ]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _vm.errors.photo
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.photo[0])),
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass: "custom-file-input",
+                              attrs: { type: "file", id: "customFile" },
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-file-label",
+                                attrs: { for: "customFile" },
+                              },
+                              [_vm._v("Choose file")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1),
+                        ]),
+                      ]),
                       _vm._v(" "),
                       _vm._m(2),
                       _vm._v(" "),
@@ -36973,28 +37006,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "form-row" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("input", {
-            staticClass: "custom-file-input",
-            attrs: { type: "file", id: "customFile" },
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
-            [_vm._v("Choose file")]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("img", {
-            staticStyle: { width: "40px", height: "40px" },
-            attrs: { src: "form.photo" },
-          }),
-        ]),
-      ]),
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("img", {
+        staticStyle: { width: "40px", height: "40px" },
+        attrs: { src: "form.photo" },
+      }),
     ])
   },
   function () {

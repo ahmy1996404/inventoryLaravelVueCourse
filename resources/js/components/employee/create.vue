@@ -18,7 +18,7 @@
                                             Add Employee
                                         </h1>
                                     </div>
-                                    <form  @submit.prevent="register" >
+                                    <form  @submit.prevent="employeeInsert" enctype="multipart/form-data" >
                                         <div class="form-group">
 
                                             <div class="form-row">
@@ -123,6 +123,7 @@
 
                                             <div class="form-row">
                                                     <div class="col-md-6">
+                                                            <small class="text-danger" v-if="errors.photo">{{errors.photo[0]}}</small>
 
                                                             <input type="file" class="custom-file-input" id="customFile">
                                                             <label class="custom-file-label" for="customFile">Choose file</label>
@@ -171,15 +172,20 @@ export default {
         return {
             form: {
                 email: null,
-                password: null,
+                phone: null,
                 name:null,
+                sallary:null,
+                address:null,
+                photo:null,
+                nid:null,
+                joining_date:null,
                 password_confirmation:null
             },
             errors:{}
         };
     },
     methods: {
-        register() {
+        employeeInsert() {
             axios
                 .post("api/auth/signup", this.form)
                 .then((res) =>{
