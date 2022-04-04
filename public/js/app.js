@@ -5824,29 +5824,33 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onFileSelected: function onFileSelected(event) {
+      var _this = this;
+
       var file = event.target.files[0];
 
       if (file.size > 1048770) {
         Notification.image_validation();
       } else {
-        console.log(event);
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+          _this.form.photo = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
       }
     },
     employeeInsert: function employeeInsert() {
-      var _this = this;
+      var _this2 = this;
 
-      axios.post("api/auth/signup", this.form).then(function (res) {
-        User.responseAfterLogin(res);
-        Toast.fire({
-          icon: 'success',
-          title: 'Signed in successfully'
+      axios.post("api/employee", this.form).then(function () {
+        _this2.$router.push({
+          name: 'employee'
         });
 
-        _this.$router.push({
-          name: 'home'
-        });
+        Notification.success();
       })["catch"](function (error) {
-        return _this.errors = error.response.data.errors;
+        return _this2.errors = error.response.data.errors;
       });
     }
   }
@@ -36951,7 +36955,7 @@ var render = function () {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "text",
+                                type: "number",
                                 id: "exampleInputFirstName",
                                 placeholder: "Enter Your Sallary",
                               },
@@ -37031,7 +37035,7 @@ var render = function () {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "text",
+                                type: "number",
                                 id: "exampleInputFirstName",
                                 placeholder: "Enter Your Nationality id",
                               },
@@ -37069,7 +37073,7 @@ var render = function () {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "text",
+                                type: "number",
                                 id: "exampleInputFirstName",
                                 placeholder: "Enter Your phone Number",
                               },
@@ -37124,11 +37128,16 @@ var render = function () {
                             ),
                           ]),
                           _vm._v(" "),
-                          _vm._m(1),
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c("img", {
+                              staticStyle: { width: "40px", height: "40px" },
+                              attrs: { src: _vm.form.photo },
+                            }),
+                          ]),
                         ]),
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _vm._m(1),
                       _vm._v(" "),
                       _c("hr"),
                     ]
@@ -37157,17 +37166,6 @@ var staticRenderFns = [
           "\n                                        Add Employee\n                                    "
         ),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("img", {
-        staticStyle: { width: "40px", height: "40px" },
-        attrs: { src: "form.photo" },
-      }),
     ])
   },
   function () {

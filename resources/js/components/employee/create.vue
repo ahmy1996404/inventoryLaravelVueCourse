@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter Your Sallary"
@@ -89,7 +89,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter Your Nationality id"
@@ -105,7 +105,7 @@
                                             <div class="form-row">
                                                     <div class="col-md-6">
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter Your phone Number"
@@ -129,7 +129,7 @@
                                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <img src="form.photo" style="width:40px; height:40px">
+                                                        <img :src="form.photo" style="width:40px; height:40px">
 
                                                     </div>
                                             </div>
@@ -190,19 +190,20 @@ export default {
             if(file.size > 1048770){
                 Notification.image_validation()
             }else{
-                console.log(event)
+                let reader = new FileReader();
+                reader.onload = event=>{
+                    this.form.photo = event.target.result
+                }
+                reader.readAsDataURL(file);
             }
         },
         employeeInsert() {
             axios
-                .post("api/auth/signup", this.form)
-                .then((res) =>{
-                    User.responseAfterLogin(res)
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Signed in successfully'
-                        })
-                    this.$router.push({name:'home'})
+                .post("api/employee", this.form)
+                .then(() =>{
+
+                    this.$router.push({name:'employee'})
+                    Notification.success()
                     })
                 .catch((error) =>this.errors = (error.response.data.errors))
 
