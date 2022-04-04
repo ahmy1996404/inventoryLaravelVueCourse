@@ -5823,6 +5823,15 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    onFileSelected: function onFileSelected(event) {
+      var file = event.target.files[0];
+
+      if (file.size > 1048770) {
+        Notification.image_validation();
+      } else {
+        console.log(event);
+      }
+    },
     employeeInsert: function employeeInsert() {
       var _this = this;
 
@@ -6325,7 +6334,7 @@ var Notification = /*#__PURE__*/function () {
     value: function success() {
       new Noty({
         type: "success",
-        layout: "TopRight",
+        layout: "topRight",
         text: "Successfully Done !",
         timeout: 1000
       }).show();
@@ -6335,7 +6344,7 @@ var Notification = /*#__PURE__*/function () {
     value: function alert() {
       new Noty({
         type: "alert",
-        layout: "TopRight",
+        layout: "topRight",
         text: "Are you sure ?",
         timeout: 1000
       }).show();
@@ -6345,7 +6354,7 @@ var Notification = /*#__PURE__*/function () {
     value: function error() {
       new Noty({
         type: "alert",
-        layout: "TopRight",
+        layout: "topRight",
         text: "something went wrong !",
         timeout: 1000
       }).show();
@@ -6355,8 +6364,18 @@ var Notification = /*#__PURE__*/function () {
     value: function warning() {
       new Noty({
         type: "warning",
-        layout: "TopRight",
+        layout: "topRight",
         text: "Opps wrong !",
+        timeout: 1000
+      }).show();
+    }
+  }, {
+    key: "image_validation",
+    value: function image_validation() {
+      new Noty({
+        type: "error",
+        layout: "topRight",
+        text: "Upload image less than 1MB!",
         timeout: 1000
       }).show();
     }
@@ -6537,7 +6556,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 window.User = _Helpers_User__WEBPACK_IMPORTED_MODULE_3__["default"]; // import notification class
 
 
-window.Notifcation = _Helpers_Notification__WEBPACK_IMPORTED_MODULE_4__["default"]; // import sweet alert
+window.Notification = _Helpers_Notification__WEBPACK_IMPORTED_MODULE_4__["default"]; // import sweet alert
 
 
 window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_5___default());
@@ -37092,6 +37111,7 @@ var render = function () {
                             _c("input", {
                               staticClass: "custom-file-input",
                               attrs: { type: "file", id: "customFile" },
+                              on: { change: _vm.onFileSelected },
                             }),
                             _vm._v(" "),
                             _c(

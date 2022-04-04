@@ -2,7 +2,7 @@ class Notification {
     success() {
         new Noty({
             type: "success",
-            layout: "TopRight",
+            layout: "topRight",
             text: "Successfully Done !",
             timeout: 1000,
         }).show();
@@ -10,7 +10,7 @@ class Notification {
     alert() {
         new Noty({
             type: "alert",
-            layout: "TopRight",
+            layout: "topRight",
             text: "Are you sure ?",
             timeout: 1000,
         }).show();
@@ -18,7 +18,7 @@ class Notification {
     error() {
         new Noty({
             type: "alert",
-            layout: "TopRight",
+            layout: "topRight",
             text: "something went wrong !",
             timeout: 1000,
         }).show();
@@ -26,8 +26,16 @@ class Notification {
     warning() {
         new Noty({
             type: "warning",
-            layout: "TopRight",
+            layout: "topRight",
             text: "Opps wrong !",
+            timeout: 1000,
+        }).show();
+    }
+    image_validation() {
+        new Noty({
+            type: "error",
+            layout: "topRight",
+            text: "Upload image less than 1MB!",
             timeout: 1000,
         }).show();
     }

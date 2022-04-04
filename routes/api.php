@@ -18,5 +18,5 @@ Route::group([
     Route::post('me', [AuthController::class, 'me'] );
 
 });
+Route::resource('employee',EmployeeController::class );
 
-Route::apiResource('employee',[EmployeeController::class ]);
