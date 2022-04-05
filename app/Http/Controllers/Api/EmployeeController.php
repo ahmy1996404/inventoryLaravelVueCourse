@@ -45,7 +45,29 @@ class EmployeeController extends Controller
             $upload_path =  'backend/employee/';
             $image_url = $upload_path.$name;
             $img->save($image_url);
+            $employee = new Employee();
+            $employee->name = $request->name;
+            $employee->email = $request->email;
+            $employee->phone = $request->phone;
+            $employee->sallary = $request->sallary;
+            $employee->address = $request->address;
+            $employee->nid = $request->nid;
+            $employee->photo = $image_url;
+            $employee->joining_date = $request->joining_date;
+            $employee->save();
+        }else{
+             $employee = new Employee();
+            $employee->name = $request->name;
+            $employee->email = $request->email;
+            $employee->phone = $request->phone;
+            $employee->sallary = $request->sallary;
+            $employee->address = $request->address;
+            $employee->nid = $request->nid;
+            $employee->joining_date = $request->joining_date;
+            $employee->save();
+
         }
+
     }
 
     /**
