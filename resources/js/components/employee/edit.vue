@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <router-link to="/employee" class="btn btn-primary">
+            <router-link to="/employee" style="width:200px" class="btn btn-primary">
                 All Employee
             </router-link>
 
@@ -19,7 +19,7 @@
 
                                         </h1>
                                     </div>
-                                    <form  @submit.prevent="employeeInsert" enctype="multipart/form-data" >
+                                    <form  @submit.prevent="employeeUpdate" enctype="multipart/form-data" >
                                         <div class="form-group">
 
                                             <div class="form-row">
@@ -142,7 +142,7 @@
                                                 type="submit"
                                                 class="btn btn-primary btn-block"
                                             >
-                                                Submit
+                                                Update
                                             </button>
                                         </div>
                                         <hr />
@@ -172,15 +172,16 @@ export default {
     data() {
         return {
             form: {
-                email: null,
-                phone: null,
-                name:null,
-                sallary:null,
-                address:null,
-                photo:null,
-                nid:null,
-                joining_date:null,
-                password_confirmation:null
+                email: '',
+                phone: '',
+                name:'',
+                sallary:'',
+                address:'',
+                photo:'',
+                newPhoto:'',
+                nid:'',
+                joining_date:'',
+                password_confirmation:''
             },
             errors:{}
         };
@@ -189,7 +190,7 @@ export default {
         let id = this.$route.params.id
         axios.get('/api/employee/'+id)
         .then(({data})=>(this.form =data))
-        .catch(console.log('error'))
+        .catch((error)=>console.log(error))
     },
     methods: {
         onFileSelected(event){
@@ -199,16 +200,17 @@ export default {
             }else{
                 let reader = new FileReader();
                 reader.onload = event=>{
-                    this.form.photo = event.target.result
+                    this.form.newPhoto = event.target.result
                 }
                 reader.readAsDataURL(file);
             }
         },
-        employeeInsert() {
-            axios
-                .post("api/employee", this.form)
-                .then(() =>{
+        employeeUpdate() {
+            let id = this.$route.params.id
 
+            axios
+                .patch('/api/employee/'+id, this.form)
+                .then(() =>{
                     this.$router.push({name:'employee'})
                     Notification.success()
                     })

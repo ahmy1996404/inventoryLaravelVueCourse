@@ -6048,15 +6048,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       form: {
-        email: null,
-        phone: null,
-        name: null,
-        sallary: null,
-        address: null,
-        photo: null,
-        nid: null,
-        joining_date: null,
-        password_confirmation: null
+        email: '',
+        phone: '',
+        name: '',
+        sallary: '',
+        address: '',
+        photo: '',
+        newPhoto: '',
+        nid: '',
+        joining_date: '',
+        password_confirmation: ''
       },
       errors: {}
     };
@@ -6068,7 +6069,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   axios.get('/api/employee/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
-  })["catch"](console.log('error'));
+  })["catch"](function (error) {
+    return console.log(error);
+  });
 }), _defineProperty(_created$data$created, "methods", {
   onFileSelected: function onFileSelected(event) {
     var _this2 = this;
@@ -6081,16 +6084,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this2.form.photo = event.target.result;
+        _this2.form.newPhoto = event.target.result;
       };
 
       reader.readAsDataURL(file);
     }
   },
-  employeeInsert: function employeeInsert() {
+  employeeUpdate: function employeeUpdate() {
     var _this3 = this;
 
-    axios.post("api/employee", this.form).then(function () {
+    var id = this.$route.params.id;
+    axios.patch('/api/employee/' + id, this.form).then(function () {
       _this3.$router.push({
         name: 'employee'
       });
@@ -37616,7 +37620,11 @@ var render = function () {
       [
         _c(
           "router-link",
-          { staticClass: "btn btn-primary", attrs: { to: "/employee" } },
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { width: "200px" },
+            attrs: { to: "/employee" },
+          },
           [_vm._v("\n            All Employee\n        ")]
         ),
       ],
@@ -38035,7 +38043,11 @@ var render = function () {
       [
         _c(
           "router-link",
-          { staticClass: "btn btn-primary", attrs: { to: "/employee" } },
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { width: "200px" },
+            attrs: { to: "/employee" },
+          },
           [_vm._v("\n            All Employee\n        ")]
         ),
       ],
@@ -38058,7 +38070,7 @@ var render = function () {
                       on: {
                         submit: function ($event) {
                           $event.preventDefault()
-                          return _vm.employeeInsert.apply(null, arguments)
+                          return _vm.employeeUpdate.apply(null, arguments)
                         },
                       },
                     },
@@ -38418,7 +38430,7 @@ var staticRenderFns = [
         { staticClass: "btn btn-primary btn-block", attrs: { type: "submit" } },
         [
           _vm._v(
-            "\n                                            Submit\n                                        "
+            "\n                                            Update\n                                        "
           ),
         ]
       ),
