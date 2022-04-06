@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                             <input
-                                                                type="number"
+                                                                type="text"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter Your Shop Name"
@@ -168,7 +168,7 @@ export default {
                 reader.readAsDataURL(file);
             }
         },
-        employeeInsert() {
+        supplierInsert() {
             axios
                 .post("api/supplier", this.form)
                 .then(() =>{
