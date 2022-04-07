@@ -75,7 +75,8 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        //
+         $supplier = DB::table('suppliers')->where('id',$id)->first();
+        return response()->json($supplier);
     }
 
 
@@ -90,6 +91,37 @@ class SupplierController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $data = array();
+        $data['name']= $request->name;
+        $data['email']= $request->email;
+        $data['phone']= $request->phone;
+        $data['shop_name']= $request->shop_name;
+        $data['address']= $request->address;
+        $image =$request->newPhoto;
+        if($image){
+            $position = strpos($image,';');
+            $sub = substr($image , 0 , $position );
+            $ext = explode('/', $sub)[1];
+
+            $name = time().'.'.$ext;
+            $img = Image::make($image)->resize(240,200);
+            $upload_path =  'backend/supplier/';
+            $image_url = $upload_path.$name;
+            $success = $img->save($image_url);
+            if($success){
+                $data['photo'] = $image_url;
+                $img = DB::table('suppliers')->where('id',$id)->first();
+                $img_path = $img->photo;
+                $done = unlink($img_path);
+                $user = DB::table('suppliers')->where('id',$id)->update($data);
+
+            }
+        }else{
+            $oldPhoto = $request->photo;
+            $data['photo']= $oldPhoto;
+            $user = DB::table('suppliers')->where('id',$id)->update($data);
+
+        }
     }
 
     /**
