@@ -93,7 +93,7 @@
                                                             <label for="exampleInputFirstName">Buying Price</label>
 
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter buying price"
@@ -106,7 +106,7 @@
                                                             <label for="exampleInputFirstName">Selling Price</label>
 
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 class="form-control"
                                                                 id="exampleInputFirstName"
                                                                 placeholder="Enter selling price"
