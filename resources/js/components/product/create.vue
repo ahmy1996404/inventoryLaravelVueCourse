@@ -240,12 +240,12 @@ export default {
                 reader.readAsDataURL(file);
             }
         },
-        categoryInsert() {
+        productInsert() {
             axios
-                .post("api/category", this.form)
+                .post("api/product", this.form)
                 .then(() =>{
 
-                    this.$router.push({name:'category'})
+                    this.$router.push({name:'product'})
                     Notification.success()
                     })
                 .catch((error) =>this.errors = (error.response.data.errors))

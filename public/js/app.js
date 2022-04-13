@@ -7197,12 +7197,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.readAsDataURL(file);
     }
   },
-  categoryInsert: function categoryInsert() {
+  productInsert: function productInsert() {
     var _this3 = this;
 
-    axios.post("api/category", this.form).then(function () {
+    axios.post("api/product", this.form).then(function () {
       _this3.$router.push({
-        name: 'category'
+        name: 'product'
       });
 
       Notification.success();
