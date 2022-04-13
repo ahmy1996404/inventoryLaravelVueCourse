@@ -55,23 +55,19 @@
                                             <div class="form-row">
                                                     <div class="col-md-6">
                                                         <label for="exampleFormControlSelect1">Product Category</label>
-                                                        <select class="form-control" id="exampleFormControlSelect1">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
+
+                                                        <select v-model="form.category_id" class="form-control" id="exampleFormControlSelect1">
+                                                         <option v-for="category in categories"  :key="category.id" :value="category.id">{{category.category_name}}</option>
+
+
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6">
 
                                                         <label for="exampleFormControlSelect1">Product Supplier</label>
-                                                        <select class="form-control" id="exampleFormControlSelect1">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
+                                                        <select v-model="form.supplier_id" class="form-control" id="exampleFormControlSelect1">
+                                                            <option v-for="supplier in suppliers" :key="supplier.id" :value="supplier.id">{{supplier.name}}</option>
+
                                                         </select>
                                                     </div>
                                             </div>
@@ -206,18 +202,30 @@ export default {
     data() {
         return {
             form: {
-                email: null,
-                phone: null,
-                name:null,
-                sallary:null,
-                address:null,
-                photo:null,
-                nid:null,
-                joining_date:null,
-                password_confirmation:null
+                product_name: null,
+                product_code: null,
+                category_id:null,
+                supplier_id:null,
+                root:null,
+                buying_price:null,
+                selling_price:null,
+                buying_date:null,
+                image:null,
+                product_quantity:null,
+
             },
-            errors:{}
+            errors:{},
+            categories:{},
+            suppliers:{}
         };
+    },
+    created(){
+        axios.get('/api/category/')
+            .then(({data})=> (this.categories = data))
+            .catch()
+        axios.get('/api/supplier/')
+            .then(({data})=> (this.suppliers = data))
+            .catch()
     },
     methods: {
         onFileSelected(event){
@@ -227,17 +235,17 @@ export default {
             }else{
                 let reader = new FileReader();
                 reader.onload = event=>{
-                    this.form.photo = event.target.result
+                    this.form.image = event.target.result
                 }
                 reader.readAsDataURL(file);
             }
         },
-        employeeInsert() {
+        categoryInsert() {
             axios
-                .post("api/employee", this.form)
+                .post("api/category", this.form)
                 .then(() =>{
 
-                    this.$router.push({name:'employee'})
+                    this.$router.push({name:'category'})
                     Notification.success()
                     })
                 .catch((error) =>this.errors = (error.response.data.errors))
