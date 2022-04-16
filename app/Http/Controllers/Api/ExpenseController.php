@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExpenseController extends Controller
 {
@@ -14,7 +16,8 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expense = Expense::all();
+        return response()->json($expense);
     }
 
     /**
@@ -25,7 +28,18 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'details'=>'required',
+            'amount'=>'required',
+
+
+        ]);
+        $expense = new Expense();
+        $expense->details = $request->details;
+        $expense->amount = $request->amount;
+        $expense->expense_date = date('d/m/y');
+
+        $expense->save();
     }
 
     /**
@@ -39,7 +53,7 @@ class ExpenseController extends Controller
         //
     }
 
- 
+
     /**
      * Update the specified resource in storage.
      *
@@ -60,6 +74,7 @@ class ExpenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('expenses')->where('id',$id)->delete();
+
     }
 }

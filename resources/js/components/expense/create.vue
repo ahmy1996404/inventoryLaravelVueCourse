@@ -107,17 +107,19 @@ export default {
     data() {
         return {
             form: {
-                category_name: null,
+                details: '',
+                amount: '',
+
             },
             errors: {},
         };
     },
     methods: {
-        categoryInsert() {
+        expenseInsert() {
             axios
-                .post("api/category", this.form)
+                .post("api/expense", this.form)
                 .then(() => {
-                    this.$router.push({ name: "category" });
+                    this.$router.push({ name: "expense" });
                     Notification.success();
                 })
                 .catch((error) => (this.errors = error.response.data.errors));
