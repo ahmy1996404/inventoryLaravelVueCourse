@@ -21,7 +21,7 @@
                                             Pay Salary
                                         </h1>
                                     </div>
-                                    <form @submit.prevent="employeeUpdate">
+                                    <form @submit.prevent="salaryPaid">
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col-md-6">
@@ -192,15 +192,10 @@ export default {
         return {
             form: {
                 email: "",
-                phone: "",
+                salary_month: "",
                 name: "",
                 sallary: "",
-                address: "",
-                photo: "",
-                newPhoto: "",
-                nid: "",
-                joining_date: "",
-                password_confirmation: "",
+
             },
             errors: {},
         };
@@ -213,25 +208,14 @@ export default {
             .catch((error) => console.log(error));
     },
     methods: {
-        onFileSelected(event) {
-            let file = event.target.files[0];
-            if (file.size > 1048770) {
-                Notification.image_validation();
-            } else {
-                let reader = new FileReader();
-                reader.onload = (event) => {
-                    this.form.newPhoto = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        },
-        employeeUpdate() {
+
+        salaryPaid() {
             let id = this.$route.params.id;
 
             axios
-                .patch("/api/employee/" + id, this.form)
+                .post("/api/salary/paid/" + id, this.form)
                 .then(() => {
-                    this.$router.push({ name: "employee" });
+                    this.$router.push({ name: "given-salary" });
                     Notification.success();
                 })
                 .catch((error) => (this.errors = error.response.data.errors));
