@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="{{ asset('backend/img/logo/logo.png') }}" rel="icon">
-  <title>RuangAdmin - Dashboard course</title>
+  <title>Laravel Vuejs Course - Dashboard course</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -26,13 +26,18 @@
                     <div class="sidebar-brand-icon">
                     <img src="{{ asset('backend/img/logo/logo2.png') }}">
                     </div>
-                    <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+                    <div class="sidebar-brand-text mx-3">Laravel Vue Course</div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <li class="nav-item active">
                     <router-link class="nav-link" to="/home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></router-link>
+                </li>
+                <li class="nav-item bg-info">
+                    <router-link class="nav-link" to="/home">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>POS</span></router-link>
                 </li>
                 <hr class="sidebar-divider">
                 <div class="sidebar-heading">
@@ -97,12 +102,25 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
                     aria-expanded="true" aria-controls="collapseBootstrap4">
                     <i class="far fa-fw fa-window-maximize"></i>
-                    <span>Expensive</span>
+                    <span>Expenses</span>
                     </a>
                     <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <router-link class="collapse-item" to="/store-expense">Add Expense</router-link>
                         <router-link class="collapse-item" to="/expense">All Expense</router-link>
+                    </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap6"
+                    aria-expanded="true" aria-controls="collapseBootstrap6">
+                    <i class="far fa-fw fa-window-maximize"></i>
+                    <span>Customers</span>
+                    </a>
+                    <div id="collapseBootstrap6" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <router-link class="collapse-item" to="/store-customer">Add Customer</router-link>
+                        <router-link class="collapse-item" to="/customer">All Customer</router-link>
                     </div>
                     </div>
                 </li>
@@ -129,13 +147,12 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
                     aria-controls="collapseTable">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span>
+                    <span>Reports</span>
                     </a>
                     <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tables</h6>
-                        <a class="collapse-item" href="simple-tables.html">Simple Tables</a>
-                        <a class="collapse-item" href="datatables.html">DataTables</a>
+                        <a class="collapse-item" href="simple-tables.html">Report One</a>
+                        <a class="collapse-item" href="datatables.html">Report Two</a>
                     </div>
                     </div>
                 </li>
