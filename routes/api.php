@@ -34,3 +34,8 @@ Route::resource('product',ProductController::class );
 Route::resource('expense',ExpenseController::class );
 
 Route::post('/salary/paid/{id}', [SalaryController::class,'Paid']);
+Route::get('/salary', [SalaryController::class,'AllSalary']);
+Route::get('/salary/view/{id}', [SalaryController::class,'viewSalary']);
+Route::get('/edit/salary/{id}', [SalaryController::class,'editSalary']);
+Route::post('/salary/update/{id}', [SalaryController::class,'salaryUpdate']);
+
