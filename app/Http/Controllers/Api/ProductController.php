@@ -161,4 +161,10 @@ class ProductController extends Controller
 
         }
     }
+    public function stockUpdate( Request $request , $id)
+    {
+        $data = array();
+        $data['product_quantity']= $request->product_quantity;
+        DB::table('products')->where('id',$id)->update($data);
+    }
 }

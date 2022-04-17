@@ -39,3 +39,4 @@ Route::get('/salary/view/{id}', [SalaryController::class,'viewSalary']);
 Route::get('/edit/salary/{id}', [SalaryController::class,'editSalary']);
 Route::post('/salary/update/{id}', [SalaryController::class,'salaryUpdate']);
 
+Route::post('/stock/update/{id}', [ProductController::class,'stockUpdate']);
