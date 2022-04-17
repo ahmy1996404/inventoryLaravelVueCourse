@@ -32,6 +32,11 @@ let storeExpense = require("./components/expense/create.vue").default;
 let expense = require("./components/expense/index.vue").default;
 let editExpense = require("./components/expense/edit.vue").default;
 
+// salary component
+let salary = require("./components/salary/all_employee.vue").default;
+let paySalary = require("./components/salary/create.vue").default;
+
+
 export const routes = [
     { path: "/", component: login, name: "/" },
     { path: "/register", component: register, name: "register" },
@@ -120,5 +125,16 @@ export const routes = [
         path: "/edit-expense/:id",
         component: editExpense,
         name: "edit-expense",
+    },
+    //salary ROUtES
+    {
+        path: "/given-salary",
+        component: salary,
+        name: "given-salary",
+    },
+    {
+        path: "/pay-salary/:id",
+        component: paySalary,
+        name: "pay-salary",
     },
 ];
