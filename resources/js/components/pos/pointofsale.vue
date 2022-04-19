@@ -55,7 +55,12 @@
                                     All Product
                                 </button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <li
+                                class="nav-item"
+                                v-for="category in categories"
+                                :key="category.id"
+                                role="presentation"
+                            >
                                 <button
                                     class="nav-link"
                                     id="profile-tab"
@@ -65,11 +70,11 @@
                                     role="tab"
                                     aria-controls="profile"
                                     aria-selected="false"
+                                    @click="subproduct(category.id)"
                                 >
-                                    Profile
+                                    {{ category.category_name }}
                                 </button>
                             </li>
-
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div
@@ -78,61 +83,62 @@
                                 role="tabpanel"
                                 aria-labelledby="home-tab"
                             >
+                                <div class="card-body">
+                                    <input
+                                        type="text"
+                                        v-model="searchTerm"
+                                        class="form-control"
+                                        style="width: 550px"
+                                        placeholder="Search Here"
+                                    />
 
-                        <div class="card-body">
-                            <input
-                                type="text"
-                                v-model="searchTerm"
-                                class="form-control"
-                                style="width: 550px"
-                                placeholder="Search Here"
-                            />
-
-                            <div class="row">
-                                <div
-                                    class="col-lg-3 col-md-3 col-sm-6 col-6"
-                                    v-for="product in filtersearch"
-                                    :key="product.id"
-                                >
-                                    <a href="#">
+                                    <div class="row">
                                         <div
-                                            class="card"
-                                            style="
-                                                width: 8.5rem;
-                                                margin-bottom: 5px;
-                                            "
+                                            class="col-lg-3 col-md-3 col-sm-6 col-6"
+                                            v-for="product in filtersearch"
+                                            :key="product.id"
                                         >
-                                            <img
-                                                :src="product.image"
-                                                id="em_photo"
-                                                class="card-img-top"
-                                            />
-                                            <div class="card-body">
-                                                <h5 class="card-title">
-                                                    {{ product.product_name }}
-                                                </h5>
-                                                <span
-                                                    v-if="
-                                                        product.product_quantity >=
-                                                        1
+                                            <a href="#">
+                                                <div
+                                                    class="card"
+                                                    style="
+                                                        width: 8.5rem;
+                                                        margin-bottom: 5px;
                                                     "
-                                                    class="badge badge-success"
-                                                    >Available
-                                                    {{
-                                                        product.product_quantity
-                                                    }}</span
                                                 >
-                                                <span
-                                                    v-else
-                                                    class="badge badge-danger"
-                                                    >Stock Out</span
-                                                >
-                                            </div>
+                                                    <img
+                                                        :src="product.image"
+                                                        id="em_photo"
+                                                        class="card-img-top"
+                                                    />
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">
+                                                            {{
+                                                                product.product_name
+                                                            }}
+                                                        </h5>
+                                                        <span
+                                                            v-if="
+                                                                product.product_quantity >=
+                                                                1
+                                                            "
+                                                            class="badge badge-success"
+                                                            >Available
+                                                            {{
+                                                                product.product_quantity
+                                                            }}</span
+                                                        >
+                                                        <span
+                                                            v-else
+                                                            class="badge badge-danger"
+                                                            >Stock Out</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
                             </div>
                             <div
                                 class="tab-pane fade"
@@ -140,12 +146,66 @@
                                 role="tabpanel"
                                 aria-labelledby="profile-tab"
                             >
-                                ...
-                            </div>
+                             <div class="card-body">
 
+                                <input
+                                    type="text"
+                                    v-model="searchTerm"
+                                    class="form-control"
+                                    style="width: 550px"
+                                    placeholder="Search Here"
+                                />
+
+                                <div class="row">
+                                    <div
+                                        class="col-lg-3 col-md-3 col-sm-6 col-6"
+                                        v-for="getproduct in getfiltersearch"
+                                        :key="getproduct.id"
+                                    >
+                                        <a href="#">
+                                            <div
+                                                class="card"
+                                                style="
+                                                    width: 8.5rem;
+                                                    margin-bottom: 5px;
+                                                "
+                                            >
+                                                <img
+                                                    :src="getproduct.image"
+                                                    id="em_photo"
+                                                    class="card-img-top"
+                                                />
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        {{
+                                                            getproduct.product_name
+                                                        }}
+                                                    </h5>
+                                                    <span
+                                                        v-if="
+                                                            getproduct.product_quantity >=
+                                                            1
+                                                        "
+                                                        class="badge badge-success"
+                                                        >Available
+                                                        {{
+                                                            getproduct.product_quantity
+                                                        }}</span
+                                                    >
+                                                    <span
+                                                        v-else
+                                                        class="badge badge-danger"
+                                                        >Stock Out</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- end category wise product  -->
-
                     </div>
                 </div>
             </div>
@@ -160,10 +220,13 @@ export default {
             this.$router.push({ name: "/" });
         }
         this.allProduct();
+        this.allCategories();
     },
     data() {
         return {
             products: [],
+            categories: [],
+            getproducts: [],
             searchTerm: "",
         };
     },
@@ -175,6 +238,13 @@ export default {
                     .match(this.searchTerm.toLowerCase());
             });
         },
+        getfiltersearch() {
+            return this.getproducts.filter((getproduct) => {
+                return getproduct.product_name
+                    .toLowerCase()
+                    .match(this.searchTerm.toLowerCase());
+            });
+        }
     },
 
     methods: {
@@ -182,6 +252,18 @@ export default {
             axios
                 .get("/api/product/")
                 .then(({ data }) => (this.products = data))
+                .catch();
+        },
+        allCategories() {
+            axios
+                .get("/api/category/")
+                .then(({ data }) => (this.categories = data))
+                .catch();
+        },
+        subproduct(id) {
+            axios
+                .get("/api/get/product/" + id)
+                .then(({ data }) => (this.getproducts = data))
                 .catch();
         },
     },
