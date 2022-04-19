@@ -21,11 +21,82 @@
                             class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
                         >
                             <h6 class="m-0 font-weight-bold text-primary">
-                                Monthly Recap Report
+                                Expense Insert
                             </h6>
+                            <a class="btn btn-sm btn-info" style="color: white"
+                                >Add Customer</a
+                            >
                         </div>
-                        <div class="card-body">
-                            <div class="chart-area"></div>
+                        <div data-v-fa6affac="" class="table-responsive">
+                            <table
+                                data-v-fa6affac=""
+                                class="table align-items-center table-flush"
+                            >
+                                <thead data-v-fa6affac="" class="thead-light">
+                                    <tr data-v-fa6affac="">
+                                        <th data-v-fa6affac="">Name</th>
+                                        <th data-v-fa6affac="">Qty</th>
+                                        <th data-v-fa6affac="">Unit</th>
+                                        <th data-v-fa6affac="">Total</th>
+                                        <th data-v-fa6affac="">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-v-fa6affac="">
+                                    <tr data-v-fa6affac="">
+                                        <td data-v-fa6affac="">
+                                            <a data-v-fa6affac="" href="#"
+                                                >Name</a
+                                            >
+                                        </td>
+                                        <td data-v-fa6affac="">Qty</td>
+                                        <td data-v-fa6affac="">Unit</td>
+                                        <td data-v-fa6affac="">
+                                            Total
+                                        </td>
+                                        <td data-v-fa6affac="">
+                                            <a
+                                                data-v-fa6affac=""
+                                                href="#"
+                                                class="btn btn-sm btn-primary"
+                                                >X</a
+                                            >
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Total Quantity : <strong>56</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Sub total Quantity : <strong>562 $</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">VAT : <strong>35 %</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Total  : <strong>2256 $ </strong> </li>
+
+                            </ul>
+                            <br> 
+                            <form>
+                                <label for="">Customer Name</label>
+                                <select class="form-control" v-model="customer_id">
+                                    <option value="">ahmed</option>
+                                    <option value="">hamouda</option>
+
+                                </select>
+                                <label for="">Pay</label>
+                                <input type="text" class="form-control" v-model="pay">
+                                <label for="">Due</label>
+                                <input type="text" class="form-control" v-model="due">
+                                 <label for="">Pay By</label>
+                                <select class="form-control" v-model="customer_id">
+                                    <option value="HandCash">Hand Cash</option>
+                                    <option value="Cheaque">Cheaque</option>
+                                    <option value="GiftCard">Gift Card</option>
+
+                                </select>
+                                <br>
+                                <button type="submit" class="btn btn-success">Submit</button>
+
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -146,62 +217,61 @@
                                 role="tabpanel"
                                 aria-labelledby="profile-tab"
                             >
-                             <div class="card-body">
+                                <div class="card-body">
+                                    <input
+                                        type="text"
+                                        v-model="searchTerm"
+                                        class="form-control"
+                                        style="width: 550px"
+                                        placeholder="Search Here"
+                                    />
 
-                                <input
-                                    type="text"
-                                    v-model="searchTerm"
-                                    class="form-control"
-                                    style="width: 550px"
-                                    placeholder="Search Here"
-                                />
-
-                                <div class="row">
-                                    <div
-                                        class="col-lg-3 col-md-3 col-sm-6 col-6"
-                                        v-for="getproduct in getfiltersearch"
-                                        :key="getproduct.id"
-                                    >
-                                        <a href="#">
-                                            <div
-                                                class="card"
-                                                style="
-                                                    width: 8.5rem;
-                                                    margin-bottom: 5px;
-                                                "
-                                            >
-                                                <img
-                                                    :src="getproduct.image"
-                                                    id="em_photo"
-                                                    class="card-img-top"
-                                                />
-                                                <div class="card-body">
-                                                    <h5 class="card-title">
-                                                        {{
-                                                            getproduct.product_name
-                                                        }}
-                                                    </h5>
-                                                    <span
-                                                        v-if="
-                                                            getproduct.product_quantity >=
-                                                            1
-                                                        "
-                                                        class="badge badge-success"
-                                                        >Available
-                                                        {{
-                                                            getproduct.product_quantity
-                                                        }}</span
-                                                    >
-                                                    <span
-                                                        v-else
-                                                        class="badge badge-danger"
-                                                        >Stock Out</span
-                                                    >
+                                    <div class="row">
+                                        <div
+                                            class="col-lg-3 col-md-3 col-sm-6 col-6"
+                                            v-for="getproduct in getfiltersearch"
+                                            :key="getproduct.id"
+                                        >
+                                            <a href="#">
+                                                <div
+                                                    class="card"
+                                                    style="
+                                                        width: 8.5rem;
+                                                        margin-bottom: 5px;
+                                                    "
+                                                >
+                                                    <img
+                                                        :src="getproduct.image"
+                                                        id="em_photo"
+                                                        class="card-img-top"
+                                                    />
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">
+                                                            {{
+                                                                getproduct.product_name
+                                                            }}
+                                                        </h5>
+                                                        <span
+                                                            v-if="
+                                                                getproduct.product_quantity >=
+                                                                1
+                                                            "
+                                                            class="badge badge-success"
+                                                            >Available
+                                                            {{
+                                                                getproduct.product_quantity
+                                                            }}</span
+                                                        >
+                                                        <span
+                                                            v-else
+                                                            class="badge badge-danger"
+                                                            >Stock Out</span
+                                                        >
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -244,7 +314,7 @@ export default {
                     .toLowerCase()
                     .match(this.searchTerm.toLowerCase());
             });
-        }
+        },
     },
 
     methods: {
