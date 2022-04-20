@@ -53,3 +53,7 @@ Route::get('/addToCart/{id}', [CartController::class,'AddToCart']);
 Route::get('/cart/product', [CartController::class,'CartProduct']);
 Route::get('/remove/cart/{id}', [CartController::class,'removeCart']);
 
+Route::get('/increment/{id}', [CartController::class,'increment']);
+Route::get('/decrement/{id}', [CartController::class,'decrement']);
+
+

@@ -48,8 +48,8 @@
                                         </td>
                                         <td data-v-fa6affac="">
                                             <input type="text" style="width:16px" readonly="" :value="cart.product_quantity">
-                                            <button class="btn btn-sm btn-success">+</button>
-                                            <button class="btn btn-sm btn-danger">-</button>
+                                            <button @click.prevent="increment(cart.id)" class="btn btn-sm btn-success">+</button>
+                                            <button @click.prevent="decrement(cart.id)" class="btn btn-sm btn-danger">-</button>
 
                                         </td>
                                         <td data-v-fa6affac="">{{cart.product_price}}</td>
@@ -357,6 +357,28 @@ export default {
                 })
                 .catch();
         },
+        increment(id){
+            axios
+                .get("/api/increment/" + id)
+                .then(() => {
+                    Reload.$emit('AfterAdd')
+                    Notification.success()
+
+                })
+                .catch();
+        },
+        decrement(id){
+            axios
+                .get("/api/decrement/" + id)
+                .then(() => {
+                    Reload.$emit('AfterAdd')
+                    Notification.success()
+
+                })
+                .catch();
+
+        },
+        // end cart method
         allProduct() {
             axios
                 .get("/api/product/")

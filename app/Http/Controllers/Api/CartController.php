@@ -14,6 +14,9 @@ class CartController extends Controller
         $check = DB::table('pos')->where('product_id', $id)->first();
         if($check){
             DB::table('pos')->where('product_id', $id)->increment('product_quantity');
+            $product =   DB::table('pos')->where('product_id', $id)->first();
+            $subtotal = $product->product_quantity * $product->product_price;
+            DB::table('pos')->where('product_id', $id)->update(['sub_total'=>$subtotal]);
         }else{
             $data = array();
             $data['product_id'] = $id;
@@ -34,5 +37,23 @@ class CartController extends Controller
     {
          DB::table('pos')->where('id',$id)->delete();
          return response('done');
+    }
+    public function increment($id)
+    {
+        $quantity = DB::table('pos')->where('id', $id)->increment('product_quantity');
+        $product =   DB::table('pos')->where('id', $id)->first();
+        $subtotal = $product->product_quantity * $product->product_price;
+        DB::table('pos')->where('id', $id)->update(['sub_total'=>$subtotal]);
+        return response('done');
+
+    }
+     public function decrement($id)
+    {
+        $quantity = DB::table('pos')->where('id', $id)->decrement('product_quantity');
+        $product =   DB::table('pos')->where('id', $id)->first();
+        $subtotal = $product->product_quantity * $product->product_price;
+        DB::table('pos')->where('id', $id)->update(['sub_total'=>$subtotal]);
+        return response('done');
+
     }
 }
