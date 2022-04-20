@@ -8310,6 +8310,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     var _this = this;
@@ -48205,6 +48206,9 @@ var render = function () {
                                   "button",
                                   {
                                     staticClass: "btn btn-sm btn-danger",
+                                    attrs: {
+                                      disabled: cart.product_quantity < 2,
+                                    },
                                     on: {
                                       click: function ($event) {
                                         $event.preventDefault()
@@ -48646,68 +48650,84 @@ var render = function () {
                                 staticClass: "col-lg-3 col-md-3 col-sm-6 col-6",
                               },
                               [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "card",
-                                      staticStyle: {
-                                        width: "8.5rem",
-                                        "margin-bottom": "5px",
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-sm",
+                                    on: {
+                                      click: function ($event) {
+                                        $event.preventDefault()
+                                        return _vm.addToCart(getproduct.id)
                                       },
                                     },
-                                    [
-                                      _c("img", {
-                                        staticClass: "card-img-top",
-                                        attrs: {
-                                          src: getproduct.image,
-                                          id: "em_photo",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "card",
+                                        staticStyle: {
+                                          width: "8.5rem",
+                                          "margin-bottom": "5px",
                                         },
-                                      }),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "card-body" }, [
-                                        _c(
-                                          "h5",
-                                          { staticClass: "card-title" },
-                                          [
-                                            _vm._v(
-                                              "\n                                                        " +
-                                                _vm._s(
-                                                  getproduct.product_name
-                                                ) +
-                                                "\n                                                    "
-                                            ),
-                                          ]
-                                        ),
+                                      },
+                                      [
+                                        _c("img", {
+                                          staticClass: "card-img-top",
+                                          attrs: {
+                                            src: getproduct.image,
+                                            id: "em_photo",
+                                          },
+                                        }),
                                         _vm._v(" "),
-                                        getproduct.product_quantity >= 1
-                                          ? _c(
-                                              "span",
-                                              {
-                                                staticClass:
-                                                  "badge badge-success",
-                                              },
+                                        _c(
+                                          "div",
+                                          { staticClass: "card-body" },
+                                          [
+                                            _c(
+                                              "h5",
+                                              { staticClass: "card-title" },
                                               [
                                                 _vm._v(
-                                                  "Available\n                                                        " +
+                                                  "\n                                                        " +
                                                     _vm._s(
-                                                      getproduct.product_quantity
-                                                    )
+                                                      getproduct.product_name
+                                                    ) +
+                                                    "\n                                                    "
                                                 ),
                                               ]
-                                            )
-                                          : _c(
-                                              "span",
-                                              {
-                                                staticClass:
-                                                  "badge badge-danger",
-                                              },
-                                              [_vm._v("Stock Out")]
                                             ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
+                                            _vm._v(" "),
+                                            getproduct.product_quantity >= 1
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "badge badge-success",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "Available\n                                                        " +
+                                                        _vm._s(
+                                                          getproduct.product_quantity
+                                                        )
+                                                    ),
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "badge badge-danger",
+                                                  },
+                                                  [_vm._v("Stock Out")]
+                                                ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
                               ]
                             )
                           }),

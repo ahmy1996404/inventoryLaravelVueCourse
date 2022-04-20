@@ -49,7 +49,7 @@
                                         <td data-v-fa6affac="">
                                             <input type="text" style="width:16px" readonly="" :value="cart.product_quantity">
                                             <button @click.prevent="increment(cart.id)" class="btn btn-sm btn-success">+</button>
-                                            <button @click.prevent="decrement(cart.id)" class="btn btn-sm btn-danger">-</button>
+                                            <button @click.prevent="decrement(cart.id)"  :disabled="cart.product_quantity < 2" class="btn btn-sm btn-danger">-</button>
 
                                         </td>
                                         <td data-v-fa6affac="">{{cart.product_price}}</td>
@@ -62,6 +62,7 @@
                                                 href="#"
                                                 class="btn btn-sm btn-primary"
                                                 @click="removeItem(cart.id)"
+
                                                 >X</a
                                             >
                                         </td>
@@ -236,7 +237,7 @@
                                             v-for="getproduct in getfiltersearch"
                                             :key="getproduct.id"
                                         >
-                                            <a href="#">
+                                            <button class="btn btn-sm" @click.prevent="addToCart(getproduct.id)">
                                                 <div
                                                     class="card"
                                                     style="
@@ -273,7 +274,7 @@
                                                         >
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
