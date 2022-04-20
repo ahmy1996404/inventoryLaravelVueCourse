@@ -74,12 +74,12 @@
                                 <li class="list-group-item d-flex justify-content-between align-items-center">Total  : <strong>2256 $ </strong> </li>
 
                             </ul>
-                            <br> 
+                            <br>
                             <form>
                                 <label for="">Customer Name</label>
                                 <select class="form-control" v-model="customer_id">
-                                    <option value="">ahmed</option>
-                                    <option value="">hamouda</option>
+                                    <option v-for="customer in customers" :key="customer.id"  >{{customer.name}}</option>
+
 
                                 </select>
                                 <label for="">Pay</label>
@@ -291,6 +291,8 @@ export default {
         }
         this.allProduct();
         this.allCategories();
+        this.allCustomers();
+
     },
     data() {
         return {
@@ -298,6 +300,8 @@ export default {
             categories: [],
             getproducts: [],
             searchTerm: "",
+            customers: [],
+            errors:''
         };
     },
     computed: {
@@ -328,6 +332,12 @@ export default {
             axios
                 .get("/api/category/")
                 .then(({ data }) => (this.categories = data))
+                .catch();
+        },
+         allCustomers() {
+            axios
+                .get("/api/customer/")
+                .then(({ data }) => (this.customers = data))
                 .catch();
         },
         subproduct(id) {

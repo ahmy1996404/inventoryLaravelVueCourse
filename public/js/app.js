@@ -8316,13 +8316,16 @@ __webpack_require__.r(__webpack_exports__);
 
     this.allProduct();
     this.allCategories();
+    this.allCustomers();
   },
   data: function data() {
     return {
       products: [],
       categories: [],
       getproducts: [],
-      searchTerm: ""
+      searchTerm: "",
+      customers: [],
+      errors: ''
     };
   },
   computed: {
@@ -8358,12 +8361,20 @@ __webpack_require__.r(__webpack_exports__);
         return _this4.categories = data;
       })["catch"]();
     },
-    subproduct: function subproduct(id) {
+    allCustomers: function allCustomers() {
       var _this5 = this;
 
-      axios.get("/api/get/product/" + id).then(function (_ref3) {
+      axios.get("/api/customer/").then(function (_ref3) {
         var data = _ref3.data;
-        return _this5.getproducts = data;
+        return _this5.customers = data;
+      })["catch"]();
+    },
+    subproduct: function subproduct(id) {
+      var _this6 = this;
+
+      axios.get("/api/get/product/" + id).then(function (_ref4) {
+        var data = _ref4.data;
+        return _this6.getproducts = data;
       })["catch"]();
     }
   }
@@ -48111,13 +48122,12 @@ var render = function () {
                         },
                       },
                     },
-                    [
-                      _c("option", { attrs: { value: "" } }, [_vm._v("ahmed")]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v("hamouda"),
-                      ]),
-                    ]
+                    _vm._l(_vm.customers, function (customer) {
+                      return _c("option", { key: customer.id }, [
+                        _vm._v(_vm._s(customer.name)),
+                      ])
+                    }),
+                    0
                   ),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "" } }, [_vm._v("Pay")]),
