@@ -11,13 +11,19 @@ class CartController extends Controller
     public function AddToCart(Request $request , $id)
     {
         $product = DB::table('products')->where('id',$id)->first();
-        $data = array();
-        $data['product_id'] = $id;
-        $data['product_name'] = $product->product_name;
-        $data['product_quantity'] = 1;
-        $data['product_price'] = $product->selling_price;
-        $data['sub_total'] = $product->selling_price;
-        DB::table('pos')->insert($data);
+        $check = DB::table('pos')->where('product_id', $id)->first();
+        if($check){
+            DB::table('pos')->where('product_id', $id)->increment('product_quantity');
+        }else{
+            $data = array();
+            $data['product_id'] = $id;
+            $data['product_name'] = $product->product_name;
+            $data['product_quantity'] = 1;
+            $data['product_price'] = $product->selling_price;
+            $data['sub_total'] = $product->selling_price;
+            DB::table('pos')->insert($data);
+        }
+
     }
     public function CartProduct()
     {
