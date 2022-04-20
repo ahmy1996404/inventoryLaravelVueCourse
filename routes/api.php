@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\EmployeeController;
@@ -47,4 +48,6 @@ Route::post('/salary/update/{id}', [SalaryController::class,'salaryUpdate']);
 Route::post('/stock/update/{id}', [ProductController::class,'stockUpdate']);
 
 Route::get('/get/product/{id}', [PosController::class,'GetProduct']);
+
+Route::get('/addToCart/{id}', [CartController::class,'AddToCart']);
 
