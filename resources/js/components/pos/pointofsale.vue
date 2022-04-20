@@ -42,22 +42,26 @@
                                     </tr>
                                 </thead>
                                 <tbody data-v-fa6affac="">
-                                    <tr data-v-fa6affac="">
+                                    <tr data-v-fa6affac="" v-for="cart in carts" :key="cart.id">
                                         <td data-v-fa6affac="">
-                                            <a data-v-fa6affac="" href="#"
-                                                >Name</a
-                                            >
+                                            {{ cart.product_name }}
                                         </td>
-                                        <td data-v-fa6affac="">Qty</td>
-                                        <td data-v-fa6affac="">Unit</td>
                                         <td data-v-fa6affac="">
-                                            Total
+                                            <input type="text" style="width:16px" readonly="" :value="cart.product_quantity">
+                                            <button class="btn btn-sm btn-success">+</button>
+                                            <button class="btn btn-sm btn-danger">-</button>
+
+                                        </td>
+                                        <td data-v-fa6affac="">{{cart.product_price}}</td>
+                                        <td data-v-fa6affac="">
+                                            {{ cart.sub_total }}
                                         </td>
                                         <td data-v-fa6affac="">
                                             <a
                                                 data-v-fa6affac=""
                                                 href="#"
                                                 class="btn btn-sm btn-primary"
+                                                @click="removeItem(cart.id)"
                                                 >X</a
                                             >
                                         </td>
@@ -292,7 +296,10 @@ export default {
         this.allProduct();
         this.allCategories();
         this.allCustomers();
-
+        this.cartProduct();
+        Reload.$on('AfterAdd',()=>{
+            this.cartProduct();
+        })
     },
     data() {
         return {
@@ -301,6 +308,7 @@ export default {
             getproducts: [],
             searchTerm: "",
             customers: [],
+            carts:[],
             errors:''
         };
     },
@@ -327,7 +335,24 @@ export default {
               axios
                 .get("/api/addToCart/" + id)
                 .then(() => {
+                    Reload.$emit('AfterAdd')
                     Notification.cart_success()
+
+                })
+                .catch();
+        },
+         cartProduct() {
+            axios
+                .get("/api/cart/product/")
+                .then(({ data }) => (this.carts = data))
+                .catch();
+        },
+        removeItem(id){
+            axios
+                .get("/api/remove/cart/" + id)
+                .then(() => {
+                    Reload.$emit('AfterAdd')
+                    Notification.cart_delete()
 
                 })
                 .catch();

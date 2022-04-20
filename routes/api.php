@@ -50,4 +50,6 @@ Route::post('/stock/update/{id}', [ProductController::class,'stockUpdate']);
 Route::get('/get/product/{id}', [PosController::class,'GetProduct']);
 
 Route::get('/addToCart/{id}', [CartController::class,'AddToCart']);
+Route::get('/cart/product', [CartController::class,'CartProduct']);
+Route::get('/remove/cart/{id}', [CartController::class,'removeCart']);
 
