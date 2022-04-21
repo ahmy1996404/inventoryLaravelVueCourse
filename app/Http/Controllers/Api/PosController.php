@@ -15,6 +15,38 @@ class PosController extends Controller
     }
     public function orderDone(Request $request)
     {
-        return response('done');
+        $validation = $request->validate([
+            'customer_id' => 'required',
+            'payBy' => 'required',
+
+        ]);
+        $data = array();
+        $data['customer_id'] = $request->customer_id;
+        $data['qty'] = $request->qty;
+        $data['sub_total'] = $request->sub_total;
+        $data['payby'] = $request->payby;
+        $data['pay'] = $request->pay;
+        $data['due'] = $request->due;
+        $data['vat'] = $request->vat;
+        $data['total'] = $request->total;
+        $data['order_date'] = date('d/m/Y');
+        $data['order_month'] = date('F');
+        $data['order_year'] = date('Y');
+
+        $order_id = DB::table('orders')->insertGetId($data);
+
+        $contents = DB::table('pos')->get();
+
+        $orderData = array();
+
+        foreach ($contents as $content) {
+            $orderData['product_id']= $content->product_id;
+            $orderData['product_quantity']= $content->product_quantity;
+            $orderData['product_price']= $content->product_price;
+            $orderData['sub_total']= $content->sub_total;
+            $orderData['order_id']= $order_id;
+
+            DB::table('order_details')->insert($orderData);
+        }
     }
 }
