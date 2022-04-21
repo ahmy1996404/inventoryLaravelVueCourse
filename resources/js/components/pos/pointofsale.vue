@@ -73,10 +73,10 @@
                         </div>
                         <div class="card-footer">
                             <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">Total Quantity : <strong>56</strong> </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">Sub total Quantity : <strong>562 $</strong> </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">VAT : <strong>35 %</strong> </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">Total  : <strong>2256 $ </strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Total Quantity : <strong>{{qty}}</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Sub total Quantity : <strong>{{ subtotal }} $</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">VAT : <strong>{{ vats.vat }} %</strong> </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">Total  : <strong>{{subtotal*vats.vat / 100 + subtotal}} $</strong> </li>
 
                             </ul>
                             <br>
@@ -298,6 +298,8 @@ export default {
         this.allCategories();
         this.allCustomers();
         this.cartProduct();
+        this.vat();
+
         Reload.$on('AfterAdd',()=>{
             this.cartProduct();
         })
@@ -310,6 +312,7 @@ export default {
             searchTerm: "",
             customers: [],
             carts:[],
+            vats:'',
             errors:''
         };
     },
@@ -327,6 +330,20 @@ export default {
                     .toLowerCase()
                     .match(this.searchTerm.toLowerCase());
             });
+        },
+        qty(){
+            let sum = 0;
+            for(let i =0 ; i < this.carts.length ; i++){
+                sum += (parseFloat(this.carts[i].product_quantity));
+            }
+            return sum;
+        },
+        subtotal(){
+            let sum = 0;
+            for(let i =0 ; i < this.carts.length ; i++){
+                sum += (parseFloat(this.carts[i].product_quantity)* parseFloat(this.carts[i].product_price));
+            }
+            return sum;
         },
     },
 
@@ -378,6 +395,12 @@ export default {
                 })
                 .catch();
 
+        },
+        vat(){
+            axios
+                .get("/api/vats/")
+                .then(({ data }) => (this.vats = data))
+                .catch();
         },
         // end cart method
         allProduct() {

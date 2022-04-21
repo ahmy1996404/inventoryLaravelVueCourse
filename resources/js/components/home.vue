@@ -315,4 +315,18 @@ export default {
     },
 };
 </script>
-<style scoped></style>
+<style >
+.bg-gradient-primary{
+    background-color: #4c60da;;
+}
+.bg-navbar {
+  background-color: #4c60da;;
+}
+
+.bg-navbar {
+  background-color: #4c60da;;
+}
+.sidebar-light .sidebar-brand {
+  background-color: #4c5fdad5;;
+}
+</style>

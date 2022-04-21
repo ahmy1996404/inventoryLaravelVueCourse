@@ -56,4 +56,6 @@ Route::get('/remove/cart/{id}', [CartController::class,'removeCart']);
 Route::get('/increment/{id}', [CartController::class,'increment']);
 Route::get('/decrement/{id}', [CartController::class,'decrement']);
 
+Route::get('/vats', [CartController::class,'Vats']);
+
 
