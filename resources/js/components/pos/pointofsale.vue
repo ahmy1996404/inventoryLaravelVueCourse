@@ -80,10 +80,10 @@
 
                             </ul>
                             <br>
-                            <form>
+                            <form @submit="orderDone">
                                 <label for="">Customer Name</label>
-                                <select class="form-control" v-model="customer_id">
-                                    <option v-for="customer in customers" :key="customer.id"  >{{customer.name}}</option>
+                                <select  class="form-control" v-model="customer_id">
+                                    <option v-for="customer in customers" :key="customer.id" :value="customer.id"  >{{customer.name}}</option>
 
 
                                 </select>
@@ -92,7 +92,7 @@
                                 <label for="">Due</label>
                                 <input type="text" class="form-control" v-model="due">
                                  <label for="">Pay By</label>
-                                <select class="form-control" v-model="customer_id">
+                                <select class="form-control" v-model="payBy">
                                     <option value="HandCash">Hand Cash</option>
                                     <option value="Cheaque">Cheaque</option>
                                     <option value="GiftCard">Gift Card</option>
@@ -306,6 +306,10 @@ export default {
     },
     data() {
         return {
+            customer_id:'',
+            pay:'',
+            due:'',
+            payBy:'',
             products: [],
             categories: [],
             getproducts: [],
@@ -401,6 +405,26 @@ export default {
                 .get("/api/vats/")
                 .then(({ data }) => (this.vats = data))
                 .catch();
+        },
+        orderDone(){
+                let total = this.subtotal * this.vats.vat / 100 + this.subtotal;
+                var data = {
+                    qty:this.qty ,
+                    subtotal:this.subtotal,
+                    customer_id : this.customer_id ,
+                    payby:this.payBy,
+                    pay : this.pay,
+                    due:this.due,
+                    vat : vats.vat ,
+                    total: total
+                }
+                axios
+                .post("api/orderdone", data)
+                .then(() => {
+                    Notification.success();
+                    this.$router.push({ name: "home" });
+
+                })
         },
         // end cart method
         allProduct() {

@@ -8332,6 +8332,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      customer_id: '',
+      pay: '',
+      due: '',
+      payBy: '',
       products: [],
       categories: [],
       getproducts: [],
@@ -8418,37 +8422,59 @@ __webpack_require__.r(__webpack_exports__);
         return _this5.vats = data;
       })["catch"]();
     },
+    orderDone: function orderDone() {
+      var _this6 = this;
+
+      var total = this.subtotal * this.vats.vat / 100 + this.subtotal;
+      var data = {
+        qty: this.qty,
+        subtotal: this.subtotal,
+        customer_id: this.customer_id,
+        payby: this.payBy,
+        pay: this.pay,
+        due: this.due,
+        vat: vats.vat,
+        total: total
+      };
+      axios.post("api/orderdone", data).then(function () {
+        Notification.success();
+
+        _this6.$router.push({
+          name: "home"
+        });
+      });
+    },
     // end cart method
     allProduct: function allProduct() {
-      var _this6 = this;
+      var _this7 = this;
 
       axios.get("/api/product/").then(function (_ref3) {
         var data = _ref3.data;
-        return _this6.products = data;
+        return _this7.products = data;
       })["catch"]();
     },
     allCategories: function allCategories() {
-      var _this7 = this;
+      var _this8 = this;
 
       axios.get("/api/category/").then(function (_ref4) {
         var data = _ref4.data;
-        return _this7.categories = data;
+        return _this8.categories = data;
       })["catch"]();
     },
     allCustomers: function allCustomers() {
-      var _this8 = this;
+      var _this9 = this;
 
       axios.get("/api/customer/").then(function (_ref5) {
         var data = _ref5.data;
-        return _this8.customers = data;
+        return _this9.customers = data;
       })["catch"]();
     },
     subproduct: function subproduct(id) {
-      var _this9 = this;
+      var _this10 = this;
 
       axios.get("/api/get/product/" + id).then(function (_ref6) {
         var data = _ref6.data;
-        return _this9.getproducts = data;
+        return _this10.getproducts = data;
       })["catch"]();
     }
   }
@@ -48413,7 +48439,7 @@ var render = function () {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("form", [
+                _c("form", { on: { submit: _vm.orderDone } }, [
                   _c("label", { attrs: { for: "" } }, [
                     _vm._v("Customer Name"),
                   ]),
@@ -48447,9 +48473,11 @@ var render = function () {
                       },
                     },
                     _vm._l(_vm.customers, function (customer) {
-                      return _c("option", { key: customer.id }, [
-                        _vm._v(_vm._s(customer.name)),
-                      ])
+                      return _c(
+                        "option",
+                        { key: customer.id, domProps: { value: customer.id } },
+                        [_vm._v(_vm._s(customer.name))]
+                      )
                     }),
                     0
                   ),
@@ -48511,8 +48539,8 @@ var render = function () {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.customer_id,
-                          expression: "customer_id",
+                          value: _vm.payBy,
+                          expression: "payBy",
                         },
                       ],
                       staticClass: "form-control",
@@ -48526,7 +48554,7 @@ var render = function () {
                               var val = "_value" in o ? o._value : o.value
                               return val
                             })
-                          _vm.customer_id = $event.target.multiple
+                          _vm.payBy = $event.target.multiple
                             ? $$selectedVal
                             : $$selectedVal[0]
                         },
