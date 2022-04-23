@@ -17,13 +17,13 @@ class PosController extends Controller
     {
         $validation = $request->validate([
             'customer_id' => 'required',
-            'payBy' => 'required',
+            'payby' => 'required',
 
         ]);
         $data = array();
         $data['customer_id'] = $request->customer_id;
         $data['qty'] = $request->qty;
-        $data['sub_total'] = $request->sub_total;
+        $data['sub_total'] = $request->subtotal;
         $data['payby'] = $request->payby;
         $data['pay'] = $request->pay;
         $data['due'] = $request->due;
@@ -47,6 +47,9 @@ class PosController extends Controller
             $orderData['order_id']= $order_id;
 
             DB::table('order_details')->insert($orderData);
+            DB::table('products')->where('id',$content->product_id)->update(['product_quantity'=> DB::raw('product_quantity -'.$content->product_quantity)]);
         }
+        DB::table('pos')->delete();
+        return response('Done');
     }
 }

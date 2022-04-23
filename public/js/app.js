@@ -8433,7 +8433,7 @@ __webpack_require__.r(__webpack_exports__);
         payby: this.payBy,
         pay: this.pay,
         due: this.due,
-        vat: vats.vat,
+        vat: this.vats.vat,
         total: total
       };
       axios.post("api/orderdone", data).then(function () {
@@ -48439,153 +48439,167 @@ var render = function () {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("form", { on: { submit: _vm.orderDone } }, [
-                  _c("label", { attrs: { for: "" } }, [
-                    _vm._v("Customer Name"),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.orderDone()
+                      },
+                    },
+                  },
+                  [
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v("Customer Name"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.customer_id,
+                            expression: "customer_id",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.customer_id = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                        },
+                      },
+                      _vm._l(_vm.customers, function (customer) {
+                        return _c(
+                          "option",
+                          {
+                            key: customer.id,
+                            domProps: { value: customer.id },
+                          },
+                          [_vm._v(_vm._s(customer.name))]
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "" } }, [_vm._v("Pay")]),
+                    _vm._v(" "),
+                    _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.customer_id,
-                          expression: "customer_id",
+                          value: _vm.pay,
+                          expression: "pay",
                         },
                       ],
                       staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.pay },
                       on: {
-                        change: function ($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function (o) {
-                              return o.selected
-                            })
-                            .map(function (o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.customer_id = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.pay = $event.target.value
                         },
                       },
-                    },
-                    _vm._l(_vm.customers, function (customer) {
-                      return _c(
-                        "option",
-                        { key: customer.id, domProps: { value: customer.id } },
-                        [_vm._v(_vm._s(customer.name))]
-                      )
                     }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Pay")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.pay,
-                        expression: "pay",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.pay },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.pay = $event.target.value
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Due")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.due,
-                        expression: "due",
-                      },
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.due },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.due = $event.target.value
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Pay By")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "" } }, [_vm._v("Due")]),
+                    _vm._v(" "),
+                    _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.payBy,
-                          expression: "payBy",
+                          value: _vm.due,
+                          expression: "due",
                         },
                       ],
                       staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.due },
                       on: {
-                        change: function ($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function (o) {
-                              return o.selected
-                            })
-                            .map(function (o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.payBy = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.due = $event.target.value
                         },
                       },
-                    },
-                    [
-                      _c("option", { attrs: { value: "HandCash" } }, [
-                        _vm._v("Hand Cash"),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "Cheaque" } }, [
-                        _vm._v("Cheaque"),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "GiftCard" } }, [
-                        _vm._v("Gift Card"),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { type: "submit" },
-                    },
-                    [_vm._v("Submit")]
-                  ),
-                ]),
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "" } }, [_vm._v("Pay By")]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.payBy,
+                            expression: "payBy",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.payBy = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "HandCash" } }, [
+                          _vm._v("Hand Cash"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "Cheaque" } }, [
+                          _vm._v("Cheaque"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "GiftCard" } }, [
+                          _vm._v("Gift Card"),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "submit" },
+                      },
+                      [_vm._v("Submit")]
+                    ),
+                  ]
+                ),
               ]),
             ]),
           ]),

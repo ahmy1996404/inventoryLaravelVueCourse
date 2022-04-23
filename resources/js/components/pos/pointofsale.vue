@@ -80,7 +80,7 @@
 
                             </ul>
                             <br>
-                            <form @submit="orderDone">
+                            <form @submit.prevent="orderDone()">
                                 <label for="">Customer Name</label>
                                 <select  class="form-control" v-model="customer_id">
                                     <option v-for="customer in customers" :key="customer.id" :value="customer.id"  >{{customer.name}}</option>
@@ -415,7 +415,7 @@ export default {
                     payby:this.payBy,
                     pay : this.pay,
                     due:this.due,
-                    vat : vats.vat ,
+                    vat : this.vats.vat ,
                     total: total
                 }
                 axios
