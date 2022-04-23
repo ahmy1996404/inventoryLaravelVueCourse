@@ -54,6 +54,7 @@ let pos = require("./components/pos/pointofsale.vue").default;
 
 // order components
 let order = require("./components/order/order.vue").default;
+let viewOrder = require("./components/order/viewOrder.vue").default;
 
 export const routes = [
     { path: "/", component: login, name: "/" },
@@ -208,5 +209,10 @@ export const routes = [
         path: "/order",
         component: order,
         name: "order",
+    },
+    {
+        path: "/view-order/:id",
+        component: viewOrder,
+        name: "view-order",
     },
 ];

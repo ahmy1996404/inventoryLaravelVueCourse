@@ -8114,6 +8114,611 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var _created$data$created;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$data$created = {
+  created: function created() {
+    if (!User.loggedIn()) {
+      this.$router.push({
+        name: "/"
+      });
+    }
+  },
+  data: function data() {
+    return {
+      errors: {},
+      orders: {},
+      details: {}
+    };
+  }
+}, _defineProperty(_created$data$created, "created", function created() {
+  var _this = this;
+
+  var id = this.$route.params.id;
+  axios.get("/api/order/details/" + id).then(function (_ref) {
+    var data = _ref.data;
+    return _this.orders = data;
+  })["catch"](function (error) {
+    return console.log(error);
+  });
+  axios.get("/api/order/orderdetails/" + id).then(function (_ref2) {
+    var data = _ref2.data;
+    return _this.details = data;
+  })["catch"](function (error) {
+    return console.log(error);
+  });
+}), _defineProperty(_created$data$created, "methods", {}), _created$data$created);
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pos/pointofsale.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pos/pointofsale.vue?vue&type=script&lang=js& ***!
@@ -11382,6 +11987,8 @@ var pos = (__webpack_require__(/*! ./components/pos/pointofsale.vue */ "./resour
 
 var order = (__webpack_require__(/*! ./components/order/order.vue */ "./resources/js/components/order/order.vue")["default"]);
 
+var viewOrder = (__webpack_require__(/*! ./components/order/viewOrder.vue */ "./resources/js/components/order/viewOrder.vue")["default"]);
+
 var routes = [{
   path: "/",
   component: login,
@@ -11520,6 +12127,10 @@ var routes = [{
   path: "/order",
   component: order,
   name: "order"
+}, {
+  path: "/view-order/:id",
+  component: viewOrder,
+  name: "view-order"
 }];
 
 /***/ }),
@@ -42294,6 +42905,45 @@ component.options.__file = "resources/js/components/order/order.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/order/viewOrder.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/order/viewOrder.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true& */ "./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true&");
+/* harmony import */ var _viewOrder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./viewOrder.vue?vue&type=script&lang=js& */ "./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _viewOrder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "48b1a2a6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/order/viewOrder.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/pos/pointofsale.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/pos/pointofsale.vue ***!
@@ -43146,6 +43796,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_viewOrder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./viewOrder.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_viewOrder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/pos/pointofsale.vue?vue&type=script&lang=js&":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/pos/pointofsale.vue?vue&type=script&lang=js& ***!
@@ -43841,6 +44507,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_template_id_159f145c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_template_id_159f145c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./order.vue?vue&type=template&id=159f145c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/order.vue?vue&type=template&id=159f145c&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true& ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_viewOrder_vue_vue_type_template_id_48b1a2a6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true&");
 
 
 /***/ }),
@@ -48638,6 +49321,859 @@ var staticRenderFns = [
         _c("th", [_vm._v("Pay By")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/order/viewOrder.vue?vue&type=template&id=48b1a2a6&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c(
+          "router-link",
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { width: "200px" },
+            attrs: { to: "/order" },
+          },
+          [_vm._v("\n            Go Back\n        ")]
+        ),
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-xl-12 col-lg-12 col-md-12" }, [
+        _c("div", { staticClass: "card shadow-sm my-5" }, [
+          _c("div", { staticClass: "card-body p-0" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "login-form" }, [
+                  _c("div", { staticClass: "text-center" }, [
+                    _c("h1", { staticClass: "h4 text-gray-900 mb-4" }, [
+                      _vm._v(
+                        "\n                                        Order Details\n                                    "
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-lg-6 mb-4" }, [
+                      _c("div", { staticClass: "card" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-header py-3 d-flex flex-row align-items-center justify-content-between",
+                          },
+                          [
+                            _c(
+                              "h6",
+                              {
+                                staticClass:
+                                  "m-0 font-weight-bold text-primary",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                    Simple Tables\n                                                "
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "table-responsive" }, [
+                          _c(
+                            "table",
+                            {
+                              staticClass:
+                                "table align-items-center table-flush",
+                            },
+                            [
+                              _c("thead", { staticClass: "thead-light" }, [
+                                _c("tr", [
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Order ID\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Customer\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Item")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Status")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Action")]),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("tbody", [
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA0449"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Wayang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Nasi Padang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA5324"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Jaenab\n                                                                Bajigur\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Gundam 90'\n                                                                Edition\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-warning" },
+                                      [_vm._v("Shipping")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA8568"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Rivat Mahesa\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Oblong\n                                                                T-Shirt\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-danger" },
+                                      [_vm._v("Pending")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1453"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Indri\n                                                                Junanda\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Hat Rounded\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-info" },
+                                      [_vm._v("Processing")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1998"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Cilok\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Baby Powder\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-footer" }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6 mb-4" }, [
+                      _c("div", { staticClass: "card" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-header py-3 d-flex flex-row align-items-center justify-content-between",
+                          },
+                          [
+                            _c(
+                              "h6",
+                              {
+                                staticClass:
+                                  "m-0 font-weight-bold text-primary",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                    Simple Tables\n                                                "
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "table-responsive" }, [
+                          _c(
+                            "table",
+                            {
+                              staticClass:
+                                "table align-items-center table-flush",
+                            },
+                            [
+                              _c("thead", { staticClass: "thead-light" }, [
+                                _c("tr", [
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Order ID\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Customer\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Item")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Status")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Action")]),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("tbody", [
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA0449"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Wayang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Nasi Padang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA5324"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Jaenab\n                                                                Bajigur\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Gundam 90'\n                                                                Edition\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-warning" },
+                                      [_vm._v("Shipping")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA8568"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Rivat Mahesa\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Oblong\n                                                                T-Shirt\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-danger" },
+                                      [_vm._v("Pending")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1453"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Indri\n                                                                Junanda\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Hat Rounded\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-info" },
+                                      [_vm._v("Processing")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1998"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Cilok\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Baby Powder\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-footer" }),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-lg-12 mb-4" }, [
+                      _c("div", { staticClass: "card" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-header py-3 d-flex flex-row align-items-center justify-content-between",
+                          },
+                          [
+                            _c(
+                              "h6",
+                              {
+                                staticClass:
+                                  "m-0 font-weight-bold text-primary",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                    Simple Tables\n                                                "
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "table-responsive" }, [
+                          _c(
+                            "table",
+                            {
+                              staticClass:
+                                "table align-items-center table-flush",
+                            },
+                            [
+                              _c("thead", { staticClass: "thead-light" }, [
+                                _c("tr", [
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Order ID\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [
+                                    _vm._v(
+                                      "\n                                                                Customer\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Item")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Status")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Action")]),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("tbody", [
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA0449"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Wayang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Nasi Padang\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA5324"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Jaenab\n                                                                Bajigur\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Gundam 90'\n                                                                Edition\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-warning" },
+                                      [_vm._v("Shipping")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA8568"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Rivat Mahesa\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Oblong\n                                                                T-Shirt\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-danger" },
+                                      [_vm._v("Pending")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1453"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Indri\n                                                                Junanda\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Hat Rounded\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-info" },
+                                      [_vm._v("Processing")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("RA1998"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Udin Cilok\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                                                                Baby Powder\n                                                            "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "span",
+                                      { staticClass: "badge badge-success" },
+                                      [_vm._v("Delivered")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "btn btn-sm btn-primary",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Detail")]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-footer" }),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "text-center" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "text-center" }),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
       ]),
     ])
   },
