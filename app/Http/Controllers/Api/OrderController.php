@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function orderDetails($id)
     {
         $order = DB::table('orders')->join('customers','orders.customer_id','customers.id')->where('orders.id',$id)->select('customers.name','customers.phone','customers.address','orders.*')->first();
-        return response()->json()->json($order);
+        return response()->json($order);
     }
     public function orderFullDetails($id)
     {
