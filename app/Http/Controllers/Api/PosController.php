@@ -57,7 +57,7 @@ class PosController extends Controller
     {
         $orderDate = new DateTime($request->date) ;
         $date = $orderDate->format('d/m/Y');
-        $order = DB::table('orders')->join('customers','orders.cutomer_id','customers.id')->select('customers.name','orders.*')->where('orders.order_date',$date)->get();
+        $order = DB::table('orders')->join('customers','orders.customer_id','customers.id')->select('customers.name','orders.*')->where('orders.order_date',$date)->get();
         return response()->json($order);
     }
 }

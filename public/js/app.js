@@ -8194,17 +8194,112 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
   data: function data() {
     return {
-      date: '',
+      date: "",
       orders: {},
       errors: {}
     };
@@ -49235,7 +49330,7 @@ var render = function () {
                       on: {
                         submit: function ($event) {
                           $event.preventDefault()
-                          return _vm.searchDate.apply(null, arguments)
+                          return _vm.searchData()
                         },
                       },
                     },
@@ -49284,7 +49379,94 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "text-center" }),
+                  _c("div", { staticClass: "text-center" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-lg-12 mb-4" }, [
+                        _c("div", { staticClass: "card" }, [
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "table-responsive" }, [
+                            _c(
+                              "table",
+                              {
+                                staticClass:
+                                  "table align-items-center table-flush",
+                              },
+                              [
+                                _vm._m(3),
+                                _vm._v(" "),
+                                _c(
+                                  "tbody",
+                                  _vm._l(_vm.orders, function (order) {
+                                    return _c("tr", { key: order.id }, [
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.name) +
+                                            "\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.qty) +
+                                            "\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.sub_total) +
+                                            " $\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.vat) +
+                                            " %\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.total) +
+                                            "\n                                                                    $\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.pay) +
+                                            "\n                                                                    $\n                                                                "
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          "\n                                                                    " +
+                                            _vm._s(order.due) +
+                                            "\n                                                                    $\n                                                                "
+                                        ),
+                                      ]),
+                                    ])
+                                  }),
+                                  0
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card-footer" }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-center" }),
                 ]),
@@ -49323,6 +49505,71 @@ var staticRenderFns = [
           ),
         ]
       ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-header py-3 d-flex flex-row align-items-center justify-content-between",
+      },
+      [
+        _c("h6", { staticClass: "m-0 font-weight-bold text-primary" }, [
+          _vm._v(
+            "\n                                                        Order Details\n                                                    "
+          ),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "thead-light" }, [
+      _c("tr", [
+        _c("th", [
+          _vm._v(
+            "\n                                                                    Customer\n                                                                    Name\n                                                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                                                                    QTY\n                                                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                                                                    SubTotal\n                                                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Vat")]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                                                                    Total\n                                                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                                                                   Pay\n                                                                "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                                                                   Due\n                                                                "
+          ),
+        ]),
+      ]),
     ])
   },
 ]
