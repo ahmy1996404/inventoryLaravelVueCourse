@@ -63,4 +63,5 @@ Route::post('/orderdone', [PosController::class,'orderDone']);
 Route::get('/orders', [OrderController::class,'todayOrder']);
 Route::get('/order/details/{id}', [OrderController::class,'orderDetails']);
 Route::get('/order/orderdetails/{id}', [OrderController::class,'orderFullDetails']);
+Route::post('/search/order', [PosController::class,'searchOrderDate']);
 
